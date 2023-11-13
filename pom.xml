@@ -10,7 +10,7 @@
 
     <name>automationtesting</name>
 
-    <url></url>
+    <url>https://www.automationtestinginsider.com/2019/08/textarea-textarea-element-defines-multi.html</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,6 +39,12 @@
             <artifactId>extentreports-testng-adapter</artifactId>
             <version>1.0.3</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
