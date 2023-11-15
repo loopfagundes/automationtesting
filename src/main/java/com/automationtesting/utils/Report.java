@@ -14,4 +14,8 @@ public class Report implements ITestListener {
     public static void log(Status status, String message) {
         ExtentTestManager.getTest().log(status, message);
     }
+
+    public static void logCapture(Status status, String message) {
+        ExtentTestManager.getTest().log(status, message, Screenshot.capture());
+    }
 }
