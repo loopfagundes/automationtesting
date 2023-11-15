@@ -17,10 +17,10 @@ public class ValidateElementStep {
 
     public ValidateElementStep textAreaValidate() {
         if (validateElementPageObject.validateTextAreaLabel().getText().equals("TEXTAREA")) {
-            Report.log(Status.PASS, "Validou TEXTAREA");
+            Report.log(Status.PASS, "Validou o TEXTAREA");
         } else {
             highlight(driver, validateElementPageObject.validateTextAreaLabel());
-            Report.logCapture(Status.FAIL, "Não validou TEXTAREA");
+            Report.logCapture(Status.FAIL, "Não validou o TEXTAREA");
         }
         return this;
     }
@@ -37,7 +37,12 @@ public class ValidateElementStep {
     }
 
     public ValidateElementStep textBoxValidate() {
-        System.out.println(validateElementPageObject.validateTextBoxLabel().getText());
+        if (validateElementPageObject.validateTextBoxLabel().getText().equals("TEXTBOX")) {
+            Report.log(Status.PASS, "Validou o TEXTBOX.");
+        } else {
+            highlight(driver, validateElementPageObject.validateTextBoxLabel());
+            Report.logCapture(Status.FAIL, "Não validou o TEXTBOX.");
+        }
         return this;
     }
 }
