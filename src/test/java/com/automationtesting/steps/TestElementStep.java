@@ -2,9 +2,12 @@ package com.automationtesting.steps;
 
 import com.automationtesting.pageobjects.TestElementPageObject;
 import com.automationtesting.utils.Report;
+import com.automationtesting.validations.ValidateElementStep;
 import com.aventstack.extentreports.Status;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
+
+import static com.automationtesting.utils.ActionsSupport.*;
 
 public class TestElementStep {
     private final WebDriver driver;
@@ -21,6 +24,7 @@ public class TestElementStep {
 
     public TestElementStep indexPage() {
         textArea();
+        textBox();
         return this;
     }
 
@@ -29,6 +33,14 @@ public class TestElementStep {
         testElementPageObject.textAreatextField().clear();
         testElementPageObject.textAreatextField().sendKeys(faker.harryPotter().spell());
         validateElementStep.textAreaValidate();
+        validateElementStep.submitTextAreaValidate();
+        backBrowser(driver);
+        return this;
+    }
+
+    private TestElementStep textBox() {
+        Report.log(Status.INFO, "Text Box");
+        validateElementStep.textBoxValidate();
         return this;
     }
 }

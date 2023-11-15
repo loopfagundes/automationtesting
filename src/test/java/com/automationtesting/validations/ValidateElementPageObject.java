@@ -1,4 +1,4 @@
-package com.automationtesting.pageobjects;
+package com.automationtesting.validations;
 
 import com.automationtesting.utils.WaitElement;
 import org.openqa.selenium.By;
@@ -16,5 +16,13 @@ public class ValidateElementPageObject {
 
     public WebElement validateTextAreaLabel() {
         return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(2)"));
+    }
+
+    public WebElement submitTextButton() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > form:nth-child(5) > input[type=submit]"));
+    }
+
+    public WebElement validateTextBoxLabel() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(9)"));
     }
 }
