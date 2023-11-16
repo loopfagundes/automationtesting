@@ -25,17 +25,6 @@ public class ValidateElementStep {
         return this;
     }
 
-    public ValidateElementStep submitTextAreaValidate() {
-        if (validateElementPageObject.submitTextButton().isDisplayed()) {
-            validateElementPageObject.submitTextButton().click();
-            Report.log(Status.PASS, "O botão de enviar recebeu um clicado.");
-        } else {
-            highlight(driver, validateElementPageObject.submitTextButton());
-            Report.logCapture(Status.FAIL, "O botão de enviar nao recebeu um clicado");
-        }
-        return this;
-    }
-
     public ValidateElementStep textBoxValidate() {
         if (validateElementPageObject.validateTextBoxLabel().getText().equals("TEXTBOX")) {
             Report.log(Status.PASS, "Validou o TEXTBOX.");

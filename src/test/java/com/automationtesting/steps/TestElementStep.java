@@ -33,8 +33,6 @@ public class TestElementStep {
         testElementPageObject.textAreatextField().clear();
         testElementPageObject.textAreatextField().sendKeys(faker.harryPotter().spell());
         validateElementStep.textAreaValidate();
-        validateElementStep.submitTextAreaValidate();
-        backBrowser(driver);
         return this;
     }
 
