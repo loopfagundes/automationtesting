@@ -15,8 +15,12 @@ public class TestElementPageObject {
         waitElement = new WaitElement(_driver);
     }
 
-    public WebElement textAreatextField() {
+    public WebElement textAreaTextField() {
         return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > form:nth-child(5) > textarea"));
+    }
+
+    public WebElement firstNameTextField() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > form:nth-child(13) > input[type=text]:nth-child(2)"));
     }
 
 

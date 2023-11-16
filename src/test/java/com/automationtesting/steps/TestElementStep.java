@@ -7,8 +7,6 @@ import com.aventstack.extentreports.Status;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 
-import static com.automationtesting.utils.ActionsSupport.*;
-
 public class TestElementStep {
     private final WebDriver driver;
     private final TestElementPageObject testElementPageObject;
@@ -30,8 +28,8 @@ public class TestElementStep {
 
     private TestElementStep textArea() {
         Report.log(Status.INFO, "Text Area");
-        testElementPageObject.textAreatextField().clear();
-        testElementPageObject.textAreatextField().sendKeys(faker.harryPotter().spell());
+        testElementPageObject.textAreaTextField().clear();
+        testElementPageObject.textAreaTextField().sendKeys(faker.harryPotter().spell());
         validateElementStep.textAreaValidate();
         return this;
     }
@@ -39,6 +37,7 @@ public class TestElementStep {
     private TestElementStep textBox() {
         Report.log(Status.INFO, "Text Box");
         validateElementStep.textBoxValidate();
+        testElementPageObject.firstNameTextField().sendKeys(faker.name().firstName());
         return this;
     }
 }
