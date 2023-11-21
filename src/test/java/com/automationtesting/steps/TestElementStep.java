@@ -38,6 +38,7 @@ public class TestElementStep {
         Report.log(Status.INFO, "Text Box");
         validateElementStep.textBoxValidate();
         testElementPageObject.firstNameTextField().sendKeys(faker.name().firstName());
+        testElementPageObject.lastNameTextField().sendKeys(faker.name().lastName());
         return this;
     }
 }

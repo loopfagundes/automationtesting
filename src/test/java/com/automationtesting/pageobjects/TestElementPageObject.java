@@ -23,5 +23,7 @@ public class TestElementPageObject {
         return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > form:nth-child(13) > input[type=text]:nth-child(2)"));
     }
 
-
+    public WebElement lastNameTextField() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > form:nth-child(13) > input[type=text]:nth-child(5)"));
+    }
 }
