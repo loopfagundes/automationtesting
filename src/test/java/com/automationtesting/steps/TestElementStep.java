@@ -23,6 +23,7 @@ public class TestElementStep {
     public TestElementStep indexPage() {
         textArea();
         textBox();
+        radioButton();
         return this;
     }
 
@@ -39,6 +40,12 @@ public class TestElementStep {
         validateElementStep.textBoxValidate();
         testElementPageObject.firstNameTextField().sendKeys(faker.name().firstName());
         testElementPageObject.lastNameTextField().sendKeys(faker.name().lastName());
+        return this;
+    }
+
+    private TestElementStep radioButton() {
+        Report.log(Status.INFO, "Radio-Button");
+        validateElementStep.radioButtonValidate();
         return this;
     }
 }

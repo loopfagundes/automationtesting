@@ -19,6 +19,10 @@ public class ValidateElementPageObject {
     }
 
     public WebElement validateTextBoxLabel() {
-        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(9)"));
+        return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(9)"));
+    }
+
+    public WebElement validateRadioButtonLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(16)"));
     }
 }

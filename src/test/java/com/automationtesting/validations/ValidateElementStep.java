@@ -34,4 +34,14 @@ public class ValidateElementStep {
         }
         return this;
     }
+
+    public ValidateElementStep radioButtonValidate() {
+        if (validateElementPageObject.validateRadioButtonLabel().getText().equals("RADIO-BUTTON")) {
+            Report.log(Status.PASS, "Validou o RADIO-BUTTON.");
+        } else {
+            highlight(driver, validateElementPageObject.validateRadioButtonLabel());
+            Report.logCapture(Status.FAIL, "Não validou o RADIO-BUTTON.");
+        }
+        return this;
+    }
 }
