@@ -54,4 +54,8 @@ public class TestElementPageObject {
     public WebElement fourthCheckBox() {
         return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=checkbox]:nth-child(36)"));
     }
+
+    public WebElement clickMeButton() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=button]:nth-child(40)"));
+    }
 }

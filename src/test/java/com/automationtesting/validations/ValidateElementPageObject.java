@@ -29,4 +29,8 @@ public class ValidateElementPageObject {
     public WebElement validateCheckBoxLabel() {
         return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(26)"));
     }
+
+    public WebElement validateInputTypeButton() {
+        return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(39)"));
+    }
 }

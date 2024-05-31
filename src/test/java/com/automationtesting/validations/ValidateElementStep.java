@@ -1,8 +1,10 @@
 package com.automationtesting.validations;
 
+import com.automationtesting.utils.JsAlert;
 import com.automationtesting.utils.Report;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import static com.automationtesting.utils.JsExecutor.*;
 
@@ -50,7 +52,17 @@ public class ValidateElementStep {
             Report.log(Status.PASS, "Validou o CHECKBOX.");
         } else {
             highlight(driver, validateElementPageObject.validateCheckBoxLabel());
-            Report.log(Status.FAIL, "Não validou o CHECKBOX.");
+            Report.logCapture(Status.FAIL, "Não validou o CHECKBOX.");
+        }
+        return this;
+    }
+
+    public ValidateElementStep inputTypeButtonValidate() {
+        if (validateElementPageObject.validateInputTypeButton().getText().equals("INPUT TYPE BUTTON")) {
+            Report.log(Status.PASS, "Validou o INPUT TYPE BUTTON");
+        } else {
+            highlight(driver, validateElementPageObject.validateInputTypeButton());
+            Report.logCapture(Status.FAIL, "Não validou o INPUT TYPE BUTTON");
         }
         return this;
     }

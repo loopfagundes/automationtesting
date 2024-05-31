@@ -1,12 +1,15 @@
 package com.automationtesting.steps;
 
 import com.automationtesting.pageobjects.TestElementPageObject;
+import com.automationtesting.utils.JsAlert;
 import com.automationtesting.utils.Report;
 import com.automationtesting.validations.ValidateElementStep;
 import com.aventstack.extentreports.Status;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
+import static com.automationtesting.utils.JsAlert.*;
 import static com.automationtesting.utils.JsExecutor.*;
 
 public class TestElementStep {
@@ -27,6 +30,7 @@ public class TestElementStep {
         textBox();
         radioButton();
         checkbox();
+        inputTypeButton();
         return this;
     }
 
@@ -63,6 +67,14 @@ public class TestElementStep {
         testElementPageObject.secondCheckBox().click();
         testElementPageObject.thridCheckBox().click();
         testElementPageObject.fourthCheckBox().click();
+        return this;
+    }
+
+    private TestElementStep inputTypeButton() {
+        Report.log(Status.INFO, "INPUT TYPE BUTTON");
+        validateElementStep.inputTypeButtonValidate();
+        testElementPageObject.clickMeButton().click();
+        JsAlert.jsAlertAccept(driver);
         return this;
     }
 }
