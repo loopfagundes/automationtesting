@@ -27,15 +27,31 @@ public class TestElementPageObject {
         return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > form:nth-child(13) > input[type=text]:nth-child(5)"));
     }
 
-    public WebElement radioButtonNoCheckbox() {
+    public WebElement radioButtonNoCheckBox() {
         return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=radio]:nth-child(22)"));
     }
 
-    public WebElement radioButtonYesCheckbox() {
+    public WebElement radioButtonYesCheckBox() {
         return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=radio]:nth-child(20)"));
     }
 
-    public WebElement radioButtonOtherCheckbox() {
+    public WebElement radioButtonOtherCheckBox() {
         return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=radio]:nth-child(24)"));
+    }
+
+    public WebElement firstCheckBox() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=checkbox]:nth-child(30)"));
+    }
+
+    public WebElement secondCheckBox() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=checkbox]:nth-child(32)"));
+    }
+
+    public WebElement thridCheckBox() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=checkbox]:nth-child(34)"));
+    }
+
+    public WebElement fourthCheckBox() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=checkbox]:nth-child(36)"));
     }
 }

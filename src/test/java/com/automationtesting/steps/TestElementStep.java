@@ -26,6 +26,7 @@ public class TestElementStep {
         textArea();
         textBox();
         radioButton();
+        checkbox();
         return this;
     }
 
@@ -48,10 +49,20 @@ public class TestElementStep {
     private TestElementStep radioButton() {
         Report.log(Status.INFO, "Radio-Button");
         validateElementStep.radioButtonValidate();
-        scrollIntoView(driver, testElementPageObject.radioButtonNoCheckbox());
-        testElementPageObject.radioButtonNoCheckbox().click();
-        testElementPageObject.radioButtonYesCheckbox().click();
-        testElementPageObject.radioButtonOtherCheckbox().click();
+        scrollIntoView(driver, testElementPageObject.radioButtonNoCheckBox());
+        testElementPageObject.radioButtonNoCheckBox().click();
+        testElementPageObject.radioButtonYesCheckBox().click();
+        testElementPageObject.radioButtonOtherCheckBox().click();
+        return this;
+    }
+
+    private TestElementStep checkbox() {
+        Report.log(Status.INFO, "CHECKBOX");
+        validateElementStep.checkBoxValidate();
+        testElementPageObject.firstCheckBox().click();
+        testElementPageObject.secondCheckBox().click();
+        testElementPageObject.thridCheckBox().click();
+        testElementPageObject.fourthCheckBox().click();
         return this;
     }
 }

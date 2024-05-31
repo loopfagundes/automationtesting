@@ -44,4 +44,14 @@ public class ValidateElementStep {
         }
         return this;
     }
+
+    public ValidateElementStep checkBoxValidate() {
+        if (validateElementPageObject.validateCheckBoxLabel().getText().equals("CHECKBOX")) {
+            Report.log(Status.PASS, "Validou o CHECKBOX.");
+        } else {
+            highlight(driver, validateElementPageObject.validateCheckBoxLabel());
+            Report.log(Status.FAIL, "Não validou o CHECKBOX.");
+        }
+        return this;
+    }
 }
