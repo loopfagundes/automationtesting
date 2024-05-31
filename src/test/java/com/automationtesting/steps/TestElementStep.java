@@ -7,6 +7,8 @@ import com.aventstack.extentreports.Status;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 
+import static com.automationtesting.utils.JsExecutor.*;
+
 public class TestElementStep {
     private final WebDriver driver;
     private final TestElementPageObject testElementPageObject;
@@ -46,6 +48,10 @@ public class TestElementStep {
     private TestElementStep radioButton() {
         Report.log(Status.INFO, "Radio-Button");
         validateElementStep.radioButtonValidate();
+        scrollIntoView(driver, testElementPageObject.radioButtonNoCheckbox());
+        testElementPageObject.radioButtonNoCheckbox().click();
+        testElementPageObject.radioButtonYesCheckbox().click();
+        testElementPageObject.radioButtonOtherCheckbox().click();
         return this;
     }
 }

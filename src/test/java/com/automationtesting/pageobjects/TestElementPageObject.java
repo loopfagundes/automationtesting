@@ -26,4 +26,16 @@ public class TestElementPageObject {
     public WebElement lastNameTextField() {
         return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > form:nth-child(13) > input[type=text]:nth-child(5)"));
     }
+
+    public WebElement radioButtonNoCheckbox() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=radio]:nth-child(22)"));
+    }
+
+    public WebElement radioButtonYesCheckbox() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=radio]:nth-child(20)"));
+    }
+
+    public WebElement radioButtonOtherCheckbox() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=radio]:nth-child(24)"));
+    }
 }
