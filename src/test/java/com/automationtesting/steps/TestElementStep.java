@@ -31,6 +31,7 @@ public class TestElementStep {
         radioButton();
         checkbox();
         inputTypeButton();
+        image();
         return this;
     }
 
@@ -75,6 +76,11 @@ public class TestElementStep {
         validateElementStep.inputTypeButtonValidate();
         testElementPageObject.clickMeButton().click();
         JsAlert.jsAlertAccept(driver);
+        return this;
+    }
+
+    private TestElementStep image() {
+        validateElementStep.imageValidate();
         return this;
     }
 }

@@ -15,4 +15,16 @@ public class JsExecutor {
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("arguments[0].scrollIntoView()", element);
     }
+
+    public boolean imagePresent(WebDriver driver, WebElement element) {
+        Object result = ((JavascriptExecutor) driver).executeScript(
+                "return arguments[0].complete && "+
+                        "typeof arguments[0].naturalWidth != \"undefined\" && "+
+                        "arguments[0].naturalWidth > 0", element);
+        boolean loaded = false;
+        if (result instanceof Boolean) {
+            loaded = (boolean) result;
+        }
+        return loaded;
+    }
 }

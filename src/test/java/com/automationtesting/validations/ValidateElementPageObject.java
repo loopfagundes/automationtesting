@@ -33,4 +33,12 @@ public class ValidateElementPageObject {
     public WebElement validateInputTypeButton() {
         return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(39)"));
     }
+
+    public WebElement validateImageLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(44)"));
+    }
+
+    public WebElement validateImageAti() {
+        return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > img"));
+    }
 }

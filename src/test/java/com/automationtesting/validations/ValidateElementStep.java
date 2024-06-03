@@ -1,20 +1,21 @@
 package com.automationtesting.validations;
 
-import com.automationtesting.utils.JsAlert;
+import com.automationtesting.utils.JsExecutor;
 import com.automationtesting.utils.Report;
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import static com.automationtesting.utils.JsExecutor.*;
 
 public class ValidateElementStep {
     private final WebDriver driver;
     private final ValidateElementPageObject validateElementPageObject;
+    private final JsExecutor jsExecutor;
 
     public ValidateElementStep(WebDriver _driver) {
         driver = _driver;
         validateElementPageObject = new ValidateElementPageObject(_driver);
+        jsExecutor = new JsExecutor();
     }
 
     public ValidateElementStep textAreaValidate() {
@@ -59,10 +60,27 @@ public class ValidateElementStep {
 
     public ValidateElementStep inputTypeButtonValidate() {
         if (validateElementPageObject.validateInputTypeButton().getText().equals("INPUT TYPE BUTTON")) {
-            Report.log(Status.PASS, "Validou o INPUT TYPE BUTTON");
+            Report.log(Status.PASS, "Validou o INPUT TYPE BUTTON.");
         } else {
             highlight(driver, validateElementPageObject.validateInputTypeButton());
-            Report.logCapture(Status.FAIL, "Não validou o INPUT TYPE BUTTON");
+            Report.logCapture(Status.FAIL, "Não validou o INPUT TYPE BUTTON.");
+        }
+        return this;
+    }
+
+    public ValidateElementStep imageValidate() {
+        if (validateElementPageObject.validateImageLabel().getText().equals("IMAGE")) {
+            Report.log(Status.PASS, "Validou a IMAGE.");
+        } else {
+            highlight(driver, validateElementPageObject.validateImageLabel());
+            Report.logCapture(Status.FAIL, "Nao validou a IMAGE");
+        }
+
+        if (jsExecutor.imagePresent(driver, validateElementPageObject.validateImageAti())) {
+            Report.log(Status.PASS, "A imagem esta presencial.");
+        } else {
+            highlight(driver, validateElementPageObject.validateImageAti());
+            Report.logCapture(Status.FAIL, "A imagem nao foi presencial.");
         }
         return this;
     }
