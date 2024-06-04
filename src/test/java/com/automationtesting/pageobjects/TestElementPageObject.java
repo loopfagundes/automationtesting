@@ -4,6 +4,7 @@ import com.automationtesting.utils.WaitElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class TestElementPageObject {
 
@@ -57,5 +58,13 @@ public class TestElementPageObject {
 
     public WebElement clickMeButton() {
         return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > input[type=button]:nth-child(40)"));
+    }
+
+    public Select dropDownCarComboBox() {
+        return new Select(waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > form:nth-child(52) > select")));
+    }
+
+    public WebElement submitButton() {
+        return waitElement.toBeClickable(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > form:nth-child(52) > input[type=submit]"));
     }
 }

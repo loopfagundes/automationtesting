@@ -84,4 +84,14 @@ public class ValidateElementStep {
         }
         return this;
     }
+
+    public ValidateElementStep dropDownValidate() {
+        if (validateElementPageObject.validateDropDownLabel().getText().equals("DROPDOWN")) {
+            Report.log(Status.PASS, "Validou a DROPDOWN.");
+        } else {
+            highlight(driver, validateElementPageObject.validateDropDownLabel());
+            Report.logCapture(Status.FAIL, "Nao validou a DROPDOWN.");
+        }
+        return this;
+    }
 }
