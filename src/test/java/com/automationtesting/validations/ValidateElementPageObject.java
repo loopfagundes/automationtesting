@@ -41,4 +41,8 @@ public class ValidateElementPageObject {
     public WebElement validateImageAti() {
         return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > img"));
     }
+
+    public WebElement validateDropDownLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(48)"));
+    }
 }

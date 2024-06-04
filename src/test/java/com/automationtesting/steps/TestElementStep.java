@@ -7,9 +7,7 @@ import com.automationtesting.validations.ValidateElementStep;
 import com.aventstack.extentreports.Status;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
-import static com.automationtesting.utils.JsAlert.*;
 import static com.automationtesting.utils.JsExecutor.*;
 
 public class TestElementStep {
@@ -32,14 +30,15 @@ public class TestElementStep {
         checkbox();
         inputTypeButton();
         image();
+        dropDown();
         return this;
     }
 
     private TestElementStep textArea() {
         Report.log(Status.INFO, "Text Area");
+        validateElementStep.textAreaValidate();
         testElementPageObject.textAreaTextField().clear();
         testElementPageObject.textAreaTextField().sendKeys(faker.harryPotter().spell());
-        validateElementStep.textAreaValidate();
         return this;
     }
 
@@ -81,6 +80,17 @@ public class TestElementStep {
 
     private TestElementStep image() {
         validateElementStep.imageValidate();
+        return this;
+    }
+
+    private TestElementStep dropDown() {
+        validateElementStep.dropDownValidate();
+        testElementPageObject.dropDownCarComboBox().selectByValue("saab");
+        testElementPageObject.dropDownCarComboBox().selectByValue("volvo");
+        testElementPageObject.dropDownCarComboBox().selectByValue("audi");
+        testElementPageObject.dropDownCarComboBox().selectByValue("fiat");
+        scrollIntoView(driver, testElementPageObject.submitButton());
+        testElementPageObject.submitButton().click();
         return this;
     }
 }
