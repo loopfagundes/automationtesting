@@ -45,4 +45,12 @@ public class ValidateElementPageObject {
     public WebElement validateDropDownLabel() {
         return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(48)"));
     }
+
+    public WebElement validateWebTableLabel() {
+        return waitElement.visibilityOf(By.cssSelector("#post-body-7988417473080013803 > div:nth-child(4) > center > h2:nth-child(57)"));
+    }
+
+    public WebElement validateTable() {
+        return waitElement.visibilityOf(By.xpath("//*[@id=\"post-body-7988417473080013803\"]/div[1]/center/table"));
+    }
 }

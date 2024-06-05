@@ -31,6 +31,7 @@ public class TestElementStep {
         inputTypeButton();
         image();
         dropDown();
+        webTable();
         return this;
     }
 
@@ -79,11 +80,13 @@ public class TestElementStep {
     }
 
     private TestElementStep image() {
+        Report.log(Status.INFO, "IMAGE");
         validateElementStep.imageValidate();
         return this;
     }
 
     private TestElementStep dropDown() {
+        Report.log(Status.INFO, "DROPDOWN");
         validateElementStep.dropDownValidate();
         testElementPageObject.dropDownCarComboBox().selectByValue("saab");
         testElementPageObject.dropDownCarComboBox().selectByValue("volvo");
@@ -91,6 +94,12 @@ public class TestElementStep {
         testElementPageObject.dropDownCarComboBox().selectByValue("fiat");
         scrollIntoView(driver, testElementPageObject.submitButton());
         testElementPageObject.submitButton().click();
+        return this;
+    }
+
+    private TestElementStep webTable() {
+        Report.log(Status.INFO, "WEBTABLE");
+        validateElementStep.webTableValidate();
         return this;
     }
 }

@@ -2,8 +2,13 @@ package com.automationtesting.validations;
 
 import com.automationtesting.utils.JsExecutor;
 import com.automationtesting.utils.Report;
+import com.automationtesting.utils.TableList;
 import com.aventstack.extentreports.Status;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 import static com.automationtesting.utils.JsExecutor.*;
 
@@ -92,6 +97,17 @@ public class ValidateElementStep {
             highlight(driver, validateElementPageObject.validateDropDownLabel());
             Report.logCapture(Status.FAIL, "Nao validou a DROPDOWN.");
         }
+        return this;
+    }
+
+    public ValidateElementStep webTableValidate() {
+        if (validateElementPageObject.validateWebTableLabel().getText().equals("WEBTABLE")) {
+            Report.log(Status.PASS, "Validou a WEBTABLE.");
+        } else {
+            highlight(driver, validateElementPageObject.validateWebTableLabel());
+            Report.logCapture(Status.FAIL, "Nao validou a WEBTABLE.");
+        }
+        TableList.tableList(validateElementPageObject.validateTable());
         return this;
     }
 }
